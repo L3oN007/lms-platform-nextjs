@@ -1,6 +1,6 @@
 export const siteConfig = {
-    name: "LMS Platform",
-    description: "LMS Platform",
+    name: "Evergreen - LMS Platform",
+    description: "Evergreen - LMS Platform",
     
     
 };
