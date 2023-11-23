@@ -1,6 +1,6 @@
-import Link from 'next/link';
-import Image from 'next/image';
 import localFont from 'next/font/local';
+import Image from 'next/image';
+import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 
@@ -15,7 +15,7 @@ export const Logo = () => {
 				<Image src='/logo.svg' alt='Logo' height={30} width={30} />
 				<p
 					className={cn(
-						'text-lg text-neutral-700 ',
+						'text-xl text-neutral-700 ',
 						headingFont.className
 					)}>
 					Evergreen
