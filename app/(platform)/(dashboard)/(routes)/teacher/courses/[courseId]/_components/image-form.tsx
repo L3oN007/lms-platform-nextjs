@@ -66,8 +66,9 @@ export const ImageForm = ({
 			</div>
 			{!isEditing &&
 				(!initialData.imageUrl ? (
-					<div className='flex items-center justify-center h-60 bg-slate-200 rounded-md'>
-						<ImageIcon className='h-10 w-10 text-slate-500' />
+					<div className='flex items-center justify-center h-60 bg-slate-200 rounded-md font-bold text-slate-500'>
+						<ImageIcon className='h-8 w-8 mr-2 text-slate-500' />
+						No Course Image
 					</div>
 				) : (
 					<div className='relative aspect-video mt-2'>
