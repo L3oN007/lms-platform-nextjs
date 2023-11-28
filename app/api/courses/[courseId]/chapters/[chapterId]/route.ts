@@ -1,7 +1,6 @@
+import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
-
-import { db } from "@/lib/db";
 
 export async function PATCH(
   req: Request,
@@ -35,8 +34,6 @@ export async function PATCH(
         ...values,
       },
     });
-
-    // TODO: Handle Video Upload
 
     return NextResponse.json(chapter);
   } catch (error) {
