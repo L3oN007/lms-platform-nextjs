@@ -3,7 +3,7 @@
 import axios from "axios";
 import * as z from "zod";
 
-import { Chapter, MuxData } from "@prisma/client";
+import { Chapter } from "@prisma/client";
 import { Pencil, PlusCircle, Video } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -70,8 +70,9 @@ export const ChapterVideoForm = ({
       </div>
       {!isEditing &&
         (!initialData.videoUrl ? (
-          <div className="flex h-60 items-center justify-center rounded-md bg-slate-200">
-            <Video className="h-10 w-10 text-slate-500" />
+          <div className="flex h-60 items-center justify-center rounded-md bg-slate-200 font-bold text-slate-500">
+            <Video className="mr-2 h-8 w-8 text-slate-500" />
+            No video
           </div>
         ) : (
           <div className="relative mt-2 aspect-video">
