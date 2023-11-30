@@ -12,8 +12,10 @@ generator client {
 }
 
 model Course {
-  id          String  @id @default(uuid())
-  userId      String
+  id       String @id @default(uuid())
+  userId   String
+  userName String
+
   title       String  @db.Text
   description String? @db.Text
   imageUrl    String? @db.Text

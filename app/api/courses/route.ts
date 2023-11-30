@@ -1,13 +1,13 @@
-import { auth } from "@clerk/nextjs";
+import { auth, clerkClient } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import { db } from "@/lib/db";
 
-export async function POST(
-  req: Request,
-) {
+export async function POST(req: Request) {
   try {
     const { userId } = auth();
+    const user = await clerkClient.users.getUser(userId!);
+
     const { title } = await req.json();
 
     if (!userId) {
@@ -18,7 +18,8 @@ export async function POST(
       data: {
         userId,
         title,
-      }
+        userName: `${user.firstName} ${user.lastName}`,
+      },
     });
 
     return NextResponse.json(course);
