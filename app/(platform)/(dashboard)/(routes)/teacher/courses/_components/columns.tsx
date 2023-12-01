@@ -29,6 +29,12 @@ export const columns: ColumnDef<Course>[] = [
         </Button>
       );
     },
+    cell: ({ row }) => {
+      const { id } = row.original;
+      return (
+        <Link href={`/teacher/courses/${id}`}>{row.getValue("title")}</Link>
+      );
+    },
   },
   {
     accessorKey: "price",
@@ -70,7 +76,7 @@ export const columns: ColumnDef<Course>[] = [
       const isPublished = row.getValue("isPublished") || false;
 
       return (
-        <Badge className={cn("bg-slate-500", isPublished && "bg-sky-700")}>
+        <Badge className={cn(" bg-slate-500", isPublished && "bg-emerald-700")}>
           {isPublished ? "Published" : "Draft"}
         </Badge>
       );

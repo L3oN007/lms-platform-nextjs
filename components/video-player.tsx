@@ -23,6 +23,7 @@ export const VideoPlayer = ({ videoUrl, width, height }: VideoPlayerProps) => {
         width={width}
         height={height}
         controls={true}
+        pip={true}
       />
     </div>
   );
