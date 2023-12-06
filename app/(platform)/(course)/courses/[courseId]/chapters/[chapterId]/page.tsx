@@ -94,13 +94,15 @@ const ChapterIdPage = async ({
             )}
           </div>
           <Separator />
-          <div>
+          <div className="p-4">
+            <h2 className="mb-2 text-2xl font-semibold">Description</h2>
             <Preview value={chapter.description!} />
           </div>
           {!!attachments.length && (
             <>
               <Separator />
               <div className="p-4">
+                <h2 className="mb-2 text-2xl font-semibold">Attachments</h2>
                 {attachments.map((attachment) => (
                   <a
                     href={attachment.url}
@@ -108,7 +110,7 @@ const ChapterIdPage = async ({
                     target="_blank"
                     className="flex w-full items-center rounded-md border bg-emerald-200 p-3 text-emerald-700 hover:underline"
                   >
-                    <File />
+                    <File className="mr-2 h-4 w-4" />
                     <p className="line-clamp-1">{attachment.name}</p>
                   </a>
                 ))}

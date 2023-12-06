@@ -39,6 +39,7 @@
     "react-player": "^2.13.0",
     "react-quill": "^2.0.0",
     "sonner": "^1.2.2",
+    "stripe": "^14.7.0",
     "tailwind-merge": "^2.0.0",
     "tailwindcss-animate": "^1.0.7",
     "uploadthing": "^6.0.3",
