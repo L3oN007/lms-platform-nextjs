@@ -9,6 +9,7 @@ import { CourseEnrollButton } from "./_components/course-enroll-button";
 import { Separator } from "@/components/ui/separator";
 import { Preview } from "@/components/preview";
 import { File } from "lucide-react";
+import { CourseProgressButton } from "./_components/course-progress-button";
 
 export async function generateMetadata({
   params,
@@ -85,7 +86,12 @@ const ChapterIdPage = async ({
           <div className="flex flex-col items-center justify-between p-4 md:flex-row">
             <h2 className="mb-2 text-2xl font-semibold">{chapter.title}</h2>
             {purchase ? (
-              <div>Add</div>
+              <CourseProgressButton
+                chapterId={params.chapterId}
+                courseId={params.courseId}
+                nextChapterId={nextChapter?.id}
+                isCompleted={!!userProgress?.isCompleted}
+              />
             ) : (
               <CourseEnrollButton
                 courseId={params.courseId}
@@ -108,7 +114,7 @@ const ChapterIdPage = async ({
                     href={attachment.url}
                     key={attachment.id}
                     target="_blank"
-                    className="flex w-full items-center rounded-md border bg-emerald-200 p-3 text-emerald-700 hover:underline"
+                    className="flex w-full items-center rounded-md border bg-green-200 p-3 text-emerald-700 hover:underline"
                   >
                     <File className="mr-2 h-4 w-4" />
                     <p className="line-clamp-1">{attachment.name}</p>
