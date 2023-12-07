@@ -106,8 +106,8 @@ export const CategoryForm = ({
                   <FormControl>
                     <Combobox
                       placeholderName="Category"
-                      options={...options}
-                      {...field}
+                      options={options}
+                      field={field}
                     />
                   </FormControl>
                   <FormMessage />

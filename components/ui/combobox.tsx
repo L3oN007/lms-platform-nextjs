@@ -21,13 +21,15 @@ import {
 interface ComboboxProps {
   options: { label: string; value: string }[];
   value?: string;
-  onChange: (value: string) => void;
+  field: any;
+  onChange?: (value: string) => void;
   placeholderName?: string;
 }
 
 export const Combobox = ({
   options,
   value,
+  field,
   onChange,
   placeholderName,
 }: ComboboxProps) => {
@@ -47,8 +49,8 @@ export const Combobox = ({
           aria-expanded={open}
           className="w-full justify-between"
         >
-          {value
-            ? options.find((option) => option.value === value)?.label
+          {field.value
+            ? options.find((option) => option.value === field.value)?.label
             : comboboxPlaceholder}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
@@ -62,14 +64,16 @@ export const Combobox = ({
               <CommandItem
                 key={option.value}
                 onSelect={() => {
-                  onChange(option.value === value ? "" : option.value);
+                  field.onChange(
+                    option.value === field.value ? "" : option.value,
+                  );
                   setOpen(false);
                 }}
               >
                 <Check
                   className={cn(
                     "mr-2 h-4 w-4",
-                    value === option.value ? "opacity-100" : "opacity-0",
+                    field.value === option.value ? "opacity-100" : "opacity-0",
                   )}
                 />
                 {option.label}
